@@ -1,0 +1,49 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Sanal ortamlar
+.venv/
+venv/
+env/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Test / kapsam
+.pytest_cache/
+.coverage
+htmlcov/
+
+# --- Editör / IDE ---
+.vscode/
+.idea/
+*.swp
+
+# --- İşletim sistemi ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Office geçici dosyaları ---
+~$*
+
+# --- Büyük dosyalar (model ağırlıkları, videolar, çıktılar) ---
+*.pt
+*.onnx
+*.engine
+*.mp4
+*.avi
+*.mov
+*.mkv
+runs/
+outputs/
+
+# --- Claude Code ---
+.claude/
