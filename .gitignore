@@ -47,3 +47,9 @@ outputs/
 
 # --- Claude Code ---
 .claude/
+CLAUDE.md
+
+# --- Yerel çalışma dosyaları (GitHub'a yüklenmeyecek) ---
+arastirma/
+ders-notlari-ozet.md
+rapor-formati.pdf

@@ -50,6 +50,7 @@ Bu proje, sabit açılı bir kameradan elde edilen trafik video kayıtları üze
 | Hafta | Dosya |
 |---|---|
 | 1 | [Hafta1_Proje raporu.doc](Hafta1_Proje%20raporu.doc) |
+| 2 – Gereksinim Analizi | [Hafta2_Proje raporu.doc](Hafta2_Proje%20raporu.doc) |
 
 ## Kaynaklar
 
