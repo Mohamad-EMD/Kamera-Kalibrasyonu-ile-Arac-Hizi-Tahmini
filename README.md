@@ -51,6 +51,9 @@ Bu proje, sabit açılı bir kameradan elde edilen trafik video kayıtları üze
 |---|---|
 | 1 | [Hafta1_Proje raporu.doc](Hafta1_Proje%20raporu.doc) |
 | 2 – Gereksinim Analizi | [Hafta2_Proje raporu.doc](Hafta2_Proje%20raporu.doc) |
+| 3 – Veri Seti Analizi ve Seçimi | [Hafta3_Proje_raporu.docx](Hafta3_Proje_raporu.docx) |
+| 4 – Model Kurulumu ve Kalibrasyon | [Hafta4_Proje raporu.doc](Hafta4_Proje%20raporu.doc) |
+| 7 – Takip ve Hız Kestirimi Modülünün Tasarımı | [Hafta7_Proje raporu.doc](Hafta7_Proje%20raporu.doc) |
 
 ## Kaynaklar
 
