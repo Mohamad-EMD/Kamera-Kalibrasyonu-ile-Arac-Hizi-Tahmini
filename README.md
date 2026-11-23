@@ -99,6 +99,7 @@ python -m pytest -q tests
 | 3 – Veri Seti Analizi ve Seçimi | [Hafta3_Proje_raporu.docx](raporlar/Hafta3_Proje_raporu.docx) |
 | 4 – Model Kurulumu ve Kalibrasyon | [Hafta4_Proje raporu.doc](raporlar/Hafta4_Proje%20raporu.doc) |
 | 7 – Takip ve Hız Kestirimi Modülünün Tasarımı | [Hafta7_Proje raporu.doc](raporlar/Hafta7_Proje%20raporu.doc) |
+| 8 – Ortam, Veri, Tespit ve Takip Modülleri | [Hafta8_Proje raporu.doc](raporlar/Hafta8_Proje%20raporu.doc) |
 
 ## Kaynaklar
 
