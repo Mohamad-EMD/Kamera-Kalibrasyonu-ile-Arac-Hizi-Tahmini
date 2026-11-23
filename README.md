@@ -30,7 +30,52 @@ Bu proje, sabit açılı bir kameradan elde edilen trafik video kayıtları üze
    - `v = (Δd / Δt) × 3.6` (km/sa)
    - Gürültü giderme için Kalman filtresi / hareketli ortalama
 
-**Değerlendirme metrikleri:** MAE, RMSE (hız), mAP (tespit), MOTA (takip)
+**Değerlendirme metrikleri:** MAE, RMSE (hız), yakalama oranı ve kimlik değişimi (takip), FPS
+
+## Veri
+
+- **UTFPR araç hızı veri seti** (Luvizon, Nassu, Minetto, IEEE T-ITS 2016): sabit kamera, 1920×1080, 30,15 FPS,
+  her araç için endüktif döngüyle ölçülmüş gerçek hız. Örnek paket (Set01–Set05, ~7 GB) herkese açık Google Drive'da.
+- **Demo videosu** (gerçek hız yok, sadece görsel): Roboflow `vehicles.mp4`.
+- Veriler depoya konmaz, varsayılan konum `C:\veri\` (config dosyalarından değiştirilebilir).
+
+## Kurulum (Windows, Python 3.11, NVIDIA GPU)
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install torch==2.6.0 torchvision==0.21.0 --index-url https://download.pytorch.org/whl/cu124
+pip install -r requirements.txt
+python scripts/download_data.py --sets 1 --demo
+```
+
+## Kullanım
+
+```powershell
+# Tespit + takip: outputs/<video>/izler.csv ve takip.mp4
+python scripts/track_video.py --config configs/utfpr_set01.yaml --save-video
+
+# Takip istatistikleri (yer gerçeğiyle kaba karşılaştırma)
+python scripts/track_stats.py outputs/Set01_video01/izler.csv --gt C:/veri/UTFPR/Set01_video01.xml
+
+# İşleme hızı ölçümü (YOLO11n/s, 640/960)
+python scripts/benchmark_fps.py --config configs/utfpr_set01.yaml --frames 600
+
+# Testler
+python -m pytest -q tests
+```
+
+## Proje Durumu
+
+| Modül | Durum |
+|---|---|
+| 1. Video okuma (`video_io.py`) | ✅ |
+| 2. Araç tespiti, YOLO11 (`detector.py`) | ✅ |
+| 3. Araç takibi, ByteTrack (`tracker.py`) | ✅ |
+| 4. Kalibrasyon / homografi (`calibration.py`) | ⏳ Hafta 9 |
+| 5. Hız kestirimi + Kalman (`speed.py`) | ⏳ Hafta 10 |
+| 6. Görselleştirme + CSV (`visualize.py`) | 🟡 takip görüntüsü hazır, hız Hafta 10 |
+| 7. Değerlendirme MAE/RMSE (`evaluate.py`) | ⏳ Hafta 10 |
 
 ## Takım Üyeleri ve Görevler
 
@@ -49,11 +94,11 @@ Bu proje, sabit açılı bir kameradan elde edilen trafik video kayıtları üze
 
 | Hafta | Dosya |
 |---|---|
-| 1 | [Hafta1_Proje raporu.doc](Hafta1_Proje%20raporu.doc) |
-| 2 – Gereksinim Analizi | [Hafta2_Proje raporu.doc](Hafta2_Proje%20raporu.doc) |
-| 3 – Veri Seti Analizi ve Seçimi | [Hafta3_Proje_raporu.docx](Hafta3_Proje_raporu.docx) |
-| 4 – Model Kurulumu ve Kalibrasyon | [Hafta4_Proje raporu.doc](Hafta4_Proje%20raporu.doc) |
-| 7 – Takip ve Hız Kestirimi Modülünün Tasarımı | [Hafta7_Proje raporu.doc](Hafta7_Proje%20raporu.doc) |
+| 1 – Proje Tanımı | [Hafta1_Proje raporu.doc](raporlar/Hafta1_Proje%20raporu.doc) |
+| 2 – Gereksinim Analizi | [Hafta2_Proje raporu.doc](raporlar/Hafta2_Proje%20raporu.doc) |
+| 3 – Veri Seti Analizi ve Seçimi | [Hafta3_Proje_raporu.docx](raporlar/Hafta3_Proje_raporu.docx) |
+| 4 – Model Kurulumu ve Kalibrasyon | [Hafta4_Proje raporu.doc](raporlar/Hafta4_Proje%20raporu.doc) |
+| 7 – Takip ve Hız Kestirimi Modülünün Tasarımı | [Hafta7_Proje raporu.doc](raporlar/Hafta7_Proje%20raporu.doc) |
 
 ## Kaynaklar
 

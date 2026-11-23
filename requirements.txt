@@ -1,0 +1,18 @@
+# Python 3.11
+# PyTorch'u GPU (CUDA 12.4) ile kurmak için önce:
+#   pip install torch==2.6.0 torchvision==0.21.0 --index-url https://download.pytorch.org/whl/cu124
+# sonra:
+#   pip install -r requirements.txt
+torch==2.6.0
+torchvision==0.21.0
+ultralytics==8.4.218
+opencv-python==5.1.0.95
+numpy==2.4.6
+pandas==3.1.1
+scipy==1.17.1
+PyYAML==6.0.4
+tqdm==4.70.1
+matplotlib==3.11.2
+lap==0.5.14
+gdown==6.5.2
+pytest==9.2.0

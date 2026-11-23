@@ -1,0 +1,28 @@
+# UTFPR veri seti, Set01 (ayar videosu). Veri depo dışında durur.
+video:
+  path: C:/veri/UTFPR/Set01_video01.h264
+  fps: 30.15            # ham h264 dosyasında FPS bilgisi yok
+  gt_xml: C:/veri/UTFPR/Set01_video01.xml
+
+detector:
+  weights: yolo11s.pt
+  imgsz: 960
+  conf: 0.1
+  iou: 0.7
+  half: true
+  road_polygon: null    # [[x, y], ...] piksel; Oturum 2'de belirlenecek
+  edge_margin: 5        # alt kenara 5 pikselden yakın (kadraja yeni giren) kutular atılır
+  agnostic_nms: true    # aynı araca farklı sınıflardan iki kutu düşmesini engeller
+
+tracker:
+  track_high_thresh: 0.25
+  track_low_thresh: 0.1
+  new_track_thresh: 0.25
+  track_buffer_s: 0.5   # saniye; kare sayısına FPS ile çevrilir
+  match_thresh: 0.8
+
+speed:
+  limit_kmh: 60
+
+output:
+  dir: outputs

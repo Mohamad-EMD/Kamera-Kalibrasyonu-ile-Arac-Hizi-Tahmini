@@ -1,0 +1,27 @@
+# Roboflow demo videosu (yer gerçeği yok; sadece görsel demo ve FPS ölçümü)
+video:
+  path: C:/veri/demo/vehicles.mp4
+  fps: null             # dosyadan okunur
+
+detector:
+  weights: yolo11s.pt
+  imgsz: 960
+  conf: 0.1
+  iou: 0.7
+  half: true
+  road_polygon: null
+  edge_margin: null
+  agnostic_nms: true
+
+tracker:
+  track_high_thresh: 0.25
+  track_low_thresh: 0.1
+  new_track_thresh: 0.25
+  track_buffer_s: 0.5
+  match_thresh: 0.8
+
+speed:
+  limit_kmh: 120
+
+output:
+  dir: outputs
