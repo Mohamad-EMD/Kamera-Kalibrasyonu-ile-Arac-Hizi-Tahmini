@@ -1,51 +1,23 @@
 # --- Python ---
 __pycache__/
 *.py[cod]
-*.so
-*.egg-info/
-.eggs/
-build/
-dist/
-
-# Sanal ortamlar
-.venv/
-venv/
-env/
-.env
-
-# Jupyter
-.ipynb_checkpoints/
-
-# Test / kapsam
 .pytest_cache/
-.coverage
-htmlcov/
 
-# --- Editör / IDE ---
+# Sanal ortam
+.venv/
+
+# --- Editör / işletim sistemi ---
 .vscode/
 .idea/
-*.swp
-
-# --- İşletim sistemi ---
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# --- Office geçici dosyaları ---
+# --- Office geçici dosyaları (rapor açıkken oluşan ~$ dosyaları) ---
 ~$*
 
-# --- Büyük dosyalar (model ağırlıkları, videolar, çıktılar) ---
+# --- Büyük dosyalar: model ağırlıkları, videolar, çıktılar ---
 *.pt
-*.onnx
-*.engine
 *.mp4
-*.avi
-*.mov
-*.mkv
-runs/
+*.h264
 outputs/
-
-# --- Yerel çalışma dosyaları (GitHub'a yüklenmeyecek) ---
-arastirma/
-ders-notlari-ozet.md
-rapor-formati.pdf
